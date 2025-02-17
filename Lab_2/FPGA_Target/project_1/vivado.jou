@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Feb  6 10:40:20 2025
+# Process ID: 10328
+# Current directory: C:/Users/Raad Mahmood/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4360 C:\Users\Raad Mahmood\project_1\project_1.xpr
+# Log file: C:/Users/Raad Mahmood/project_1/vivado.log
+# Journal file: C:/Users/Raad Mahmood/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Raad Mahmood/project_1/project_1.xpr}
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+open_run synth_1 -name synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
