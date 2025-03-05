@@ -1,6 +1,6 @@
 module lab_5_b(
     input  logic [3:0] num,
-    input  logic [2:0] sel,
+    input  logic [2:0] se,
     output logic seg_a,
     output logic seg_b,
     output logic seg_c,
@@ -44,7 +44,7 @@ end
 
 //-----Behavioral Model for Anode-----//
 always_comb begin
-    case (sel)
+    case (se)
         3'b000: {seg_no_0, seg_no_1, seg_no_2, seg_no_3, seg_no_4, seg_no_5, seg_no_6, seg_no_7} = 8'b01111111;
         3'b001: {seg_no_0, seg_no_1, seg_no_2, seg_no_3, seg_no_4, seg_no_5, seg_no_6, seg_no_7} = 8'b10111111;
         3'b010: {seg_no_0, seg_no_1, seg_no_2, seg_no_3, seg_no_4, seg_no_5, seg_no_6, seg_no_7} = 8'b11011111;
