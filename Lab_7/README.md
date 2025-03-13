@@ -2,7 +2,7 @@
 
 ## Design Diagram 
 
-![Lab-07](./Docs/lab-07\design.png)
+![Lab-07](./Docs/lab-07-design.png)
 
 ### 3bit-Counter Design
 
