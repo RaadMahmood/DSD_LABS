@@ -41,13 +41,8 @@ end
 //output always block
 always_comb begin
   case (c_state)
-     
-    // valid_round_en  = 1'b0; 
-    // round0_in   = 1'b0;
-    // input_en    = 1'b0;
-    // valid_out   = 1'b0;
 
-    1'b0: begin if (valid_in) begin   
+     'b0: begin if (valid_in) begin   
         valid_round_en  = 1'b1; 
         round0_in   = 1'b1;
         input_en    = 1'b1;
@@ -72,9 +67,9 @@ always_comb begin
 
     default: begin
       valid_round_en  = 1'b0; 
-    round0_in   = 1'b0;
-    input_en    = 1'b0;
-    valid_out   = 1'b0;
+      round0_in   = 1'b0;
+      input_en    = 1'b0;
+      valid_out   = 1'b0;
     end
   endcase
 end

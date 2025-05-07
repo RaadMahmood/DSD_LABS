@@ -40,14 +40,16 @@ assign keyMuxOut = round0_in ? cipher_key : round_key_new;
 assign plain_xor_text = plainData_q ^ keyData_q;
 
 generate
+    // 16 instantiations for 16 elements
+    // 16 elements, each one is 1 byte
     for (genvar elements=0; elements<16; elements++) begin
-        s_box substitution_boxes(   .byte_in(plain_xor_text[8*elements +: 8]),
+        s_box substitution_boxes(   .byte_in(plain_xor_text[8*elements +: 8]), // [(elements*8) + 7 :  (elements*8)]
                                     .s_byte_out(substituted_bytes[elements])
                                 );
     end
 endgenerate
     
-// Rearranging bytes of substituted data
+// Rearranging bytes of substituted data for shifting
 assign shifted_rows_data = {    substituted_bytes[11],substituted_bytes[6] ,substituted_bytes[1] ,substituted_bytes[12],
                                 substituted_bytes[7] ,substituted_bytes[2] ,substituted_bytes[13],substituted_bytes[8],
                                 substituted_bytes[3] ,substituted_bytes[14],substituted_bytes[9] ,substituted_bytes[4],
